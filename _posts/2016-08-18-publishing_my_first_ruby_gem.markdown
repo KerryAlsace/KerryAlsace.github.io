@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Publishing My First Ruby Gem"
-date:   2016-08-18 20:17:11 +0000
+date:   2016-08-18 16:17:11 -0400
 ---
 
 
@@ -24,7 +24,7 @@ I now had a working gem, and even had it on github for the world to see and use.
 > ```
 > ERROR while executing gem ... (Gem:CommandLineError)
 > 
-> unknown command simple-navigation
+> unknown command meetups-wwcnyc
 ```
 
 Huh, why doesn't it work? I ran `ruby bin/meetups-wwcnyc` to make sure my program still worked. Everything worked fine. Maybe I wasn't done? Is there another part to making a gem to enable calling it from the command line?
@@ -101,7 +101,7 @@ I tried it out by uninstalling the gem from my computer (`gem uninstall meetups-
 
 and it worked!
 
-*(Side note: it actually didn't. I forget the order of how things happened, but I know that I was able to get a version of my gem published on RubyGems, but when I tried to run it from terminal for the first time, it didn't work. I did more googling and found whatever of the above solutions fixed that, then I had to figure out (more errors and googling) how to republish and/or update a gem, then finally I got version 0.1.1 pushed to RubyGems and had the moment described above).
+*(Side note: it actually didn't. I forget the order of how things happened, but I know that I was able to get a version of my gem published on RubyGems, but when I tried to run it from terminal for the first time, it didn't work. I did more googling and found whatever of the above solutions fixed that, then I had to figure out (more errors and googling) how to republish and/or update a gem, then finally I got version 0.1.1 pushed to RubyGems and had the moment described above).*
 
 I took a good long moment to bask in that feeling. Then I decided I could make the program's output look better (now that I knew it was out in the world for anyone to see), so I did some refractoring until I was happy (enough) with it.
 
