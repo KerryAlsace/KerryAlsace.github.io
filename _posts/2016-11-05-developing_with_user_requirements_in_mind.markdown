@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Developing with User Requirements in Mind"
-date:   2016-11-05 20:05:51 +0000
+date:   2016-11-05 16:05:51 -0400
 ---
 
 For one of the Assessments in Learn.co's Full Stack Web Development course students are required to create an app using Rails. Before beginning the project, there is a list of requirements that students can read through. In a student's frame of mind, I looked at these as requirements to pass my assessment. With a completed project and hindsight, I think it would have been better to look at them with developer's frame of mind (duh, that's the whole point of working towards becoming a developer) and view them as feature requirements for a product for real users.
@@ -13,7 +13,3 @@ If I were to have viewed this project initially as though I were a developer, I 
 As it happened, I didn't do this. I built an app I like, then got completely stuck trying to figure out how to shoe-horn in some additional features to meet the requirements. This meant having to remove some of the features I had already spent a lot of time and effort building, all while kicking myself for not doing better planning ahead of time.
 
 Luckily, I was able to learn this lesson in a fairly risk-free setting. I'll be able to take this knowledge with me to my next apps/classes/jobs and remember to always keep the user and user requirements in mind when developing.
-
-- 
-- - Start developing with general idea of outcome
-- Have to shoe-horn in features and requirements
