@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Fun with JQuery"
-date:   2017-01-02 21:14:09 +0000
+date:   2017-01-02 16:14:10 -0500
 ---
 
 
@@ -10,9 +10,17 @@ In this post, I'll be talking about the process to replace the commenting featur
 Create the new rails app, enter its folder, initialize git, and make the initial commit:
 ```
 $ rails new where-to-work
+```
+```
 $ cd where-to-work/
+```
+```
 $ git init
+```
+```
 $ git add .
+```
+```
 $ git commit -m "initial commit"
 ```
 
@@ -72,6 +80,7 @@ from your Gemfile,
 from app/assets/javascripts/application.js, 
 
 and change
+
 ```
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -120,6 +129,7 @@ What we're doing here is adding a submit event to the new_comment form. What thi
 The bulk of this function is the Ajax call. Since we're posting data, we use `type: "POST"`, then we use a little bit of `this` magic to grab the url to post to, and serialize the comment data to send with that post request. If you check your console, you'll see that the response is basically a copy of the entire html of the page. Since we only want the portion that holds the comment body that was just added, we'll need to tweak it a little bit.
 
 First, let's add a app/views/comments/show.html.erb file. In it, let's just have a simple `li` format for the comment:
+
 ```
 <li><%= @comment.body %></li>
 ```
