@@ -8,6 +8,7 @@ date:   2017-01-02 16:14:10 -0500
 In this post, I'll be talking about the process to replace the commenting feature in my [last project](https://github.com/KerryAlsace/where-to-work) with a better, jquery-based one. You can read a brief summary of my misadventures from that project [here](https://kerryalsace.github.io/2016/11/05/developing_with_user_requirements_in_mind/), but for a more technical history of that project to get us up to speed, here's a quick step-by-step:
 
 Create the new rails app, enter its folder, initialize git, and make the initial commit:
+
 ```
 $ rails new where-to-work
 ```
