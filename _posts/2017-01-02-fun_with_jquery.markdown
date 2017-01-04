@@ -129,11 +129,48 @@ What we're doing here is adding a submit event to the new_comment form. What thi
 
 The bulk of this function is the Ajax call. Since we're posting data, we use `type: "POST"`, then we use a little bit of `this` magic to grab the url to post to, and serialize the comment data to send with that post request. If you check your console, you'll see that the response is basically a copy of the entire html of the page. Since we only want the portion that holds the comment body that was just added, we'll need to tweak it a little bit.
 
-First, let's add a app/views/comments/show.html.erb file. In it, let's just have a simple `li` format for the comment:
+First, let's create a Comment object. In places.js below our document ready function, let's add:
 
 ```
-<li><%= @comment.body %></li>
+function Comment(attributes) {
+    this.body = attributes.body;
+		this.id = attributes.id;
+}
 ```
+
+What this does is allow us to create a new Comment object and pass it attributes (such as the response from our Ajax call) and assign the body and id of those attributes to the Comment object.
+
+In addition, let's add a prototype function for Comment that will format the comment's body into a `<li>` that we can append to our comments list. Below the Comment function, add:
+
+```
+Comment.prototype.renderLi = function() {
+     return "<li>" + this.body + "</li>"
+}
+```
+
+Armed with this new object, we can edit our Ajax response to format the new comment and add to it the list of comments that we'll make in a minute:
+
+```
+// When a user adds a comment and clicks to submit
+  $("#new_comment").on("submit", function(e){
+	  $("input.add_comment").removeAttr('data-disable-with');
+
+    $.ajax({
+      type: "POST",
+      url: this.action,
+      data: $(this).serialize(),
+      success: function(response){
+        var comment = new Comment(response);
+				var commentLi = comment.renderLi();
+				$("ol.comments").append(commentLi);
+      }
+    });
+
+    e.preventDefault();
+  });
+```
+
+You'll notice that we've added `$("input.add_comment").removeAttr('data-disable-with');`. This is because by default, once we add a comment, the "Add" button becomes disabled. We want to make sure that doesn't happen so that a user can add another comment without refreshing the page if needed. This line removes that default attribute.
 
 Then, let's go to our comments controller and add:
 
@@ -141,7 +178,7 @@ Then, let's go to our comments controller and add:
 def create
 	@comment = @place.comments.build(comments_params)
 	if @comment.save
-		render "comments/show", layout: false
+		render json: @comment
 	else
 		redirect_to "posts/show"
 	end
