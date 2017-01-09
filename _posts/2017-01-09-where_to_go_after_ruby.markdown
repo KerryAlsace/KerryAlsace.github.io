@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Where to **Go** After Ruby"
+date:   2017-01-09 19:12:03 +0000
+---
+
+
+You may have gotten the bad pun in the title if you have heard of the programming language 'Go' (sometimes called 'golang', because it's sometimes hard to do a Google search for 'Go' and get back programming-related resources). After learning Ruby through Flatiron, my instinct was to do whatever I could to find a job where I'd be doing back-end Ruby so I could further develop and deepen my Ruby knowledge and become as much of an expert as I could. Instead, luck and happenstance allowed me to get a part-time programming gig before I completed the flatiron program, giving me a few days a week to keep working on the program, while getting some real-world experience (and a much-needed paycheck).
+
+I started out doing some front-end projects, working in Javascript with the React framework. React was brand-new to me, and I'd only started learning Javascript about a month prior, so add in some ES-6 (a newer version of Javascript with additional features I hadn't learned yet), and I was intensely missing the ease, readability, and familiarity of Ruby.
+
+While working though, I'd look in some of our other project files (while trying frantically to find a template or some clues about how to build whatever I was trying unsuccessfully to build that day) and started looking at some of the ones that ended in '.go'.
+
+Initially, I saw some javascript-y `for blabla {var bla = blablabla}` statements and a plethora of {}, and new I'd hate Go and continue to long for the `def...end` statements of Ruby.
+
+Fast-forward a couple months to when I needed to start doing some backend work on the app we were building at my job. By this time, I'd gotten a bit more exposure to Go, as well as some mini-lessons on Go and general programming related concepts from my boss. I was intrigued and excited to start learning this language with a gopher mascot, though I still new that I'd continue to miss Ruby every step of the way.
+
+That first Go week, I picked up a copy of [The Go Programming Language](http://www.gopl.io/), and started Go-ing through it (I apologize, no matter how hard I try, I can't stop making Go puns). Some of the concepts were completely foreign to me (the hell is a pointer and why do I need to use one??), but a lot of the basics were straightforward and familiar. You still declare methods/functions, use variables, call methods/functions, etc. There's a library called [Gorm](https://github.com/jinzhu/gorm) which is an ORM that has enough similarities to ActiveRecord that I felt at home with it. I initially struggled with it's lack of an easy `gem 'pry'` way of debugging (I checked out a version of Pry that was built for Go and was not a fan), but soon found that the logging system we were using, [Glog](https://github.com/golang/glog), was great for doing `puts`-style debugging. Before I knew it, I was already building things that worked!
+
+The end of that week came and I went back to working on my Learn curriculum. As soon as I went to start up a program, I realized I couldn't remember how to. I'd been doing `go run <program>.go` all week, and that felt so natural that I had to google how to start a rails program again. After that, I noticed so many things that suddenly felt weird. In Go, if you make a simple error like forgetting to add a dependency to your file (such as forgetting to add `require 'filename'` to a ruby file), instead of letting you start the server and go through your program only to suddenly get hit with an error because ruby couldn't find that dependency, Go will stop you right away and not let you even start the server, as well as give you a clear error telling you that you forgot to add a dependency. Now when I'd make a stupid mistake like that, I'd waste time loading the server and going through my app's pages until I'd hit an error. I found myself missing Go. This weird new language I only learned out of necessity had burrowed it's way into my heart (possibly why the mascot is a gopher?) and suddenly become my preferred language.
+
+While it's still probably best to stick with a language and develop as much expertise as you can, if you feel like venturing away from ruby to another backend language, I'd recommend spending some time with Go. It's readable enough not to scare off those of us who learned programming through ruby, but it's introduces complex programming concepts that you don't get with ruby. 
